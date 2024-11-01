@@ -1,23 +1,44 @@
 version: '3.8'
 
 services:
-  db:
+  library-db:
     image: postgres:latest
-    container_name: abstractdemo
+    container_name: library-management-system
     environment:
-        POSTGRES_USER: Wassem
+        POSTGRES_USER: postgres
         POSTGRES_PASSWORD: password
+        POSTGRES_DB: library_management_system
         PGDATA: /var/lib/postgresql/data
 #    volumes:
 #        - postgres-data:/var/lib/postgresql/data
     ports:
-        - "5435:5432"
+        - "5234:5432"
+#    volumes:
+#      - db_data:/var/lib/postgresql/data
+#        - ./init_db:/docker-entrypoint-initdb.d
     networks:
-      - db
+      - library-net
     restart: unless-stopped
 
+#
+#  library-app:
+#    build: .
+#    image: library-app
+#    depends_on:
+#      - library-db
+#    container_name: library-backend
+#    ports:
+#      - "3000:3000"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://library_dp:5234/library_management_system
+#      SPRING_DATASOURCE_USERNAME: postgres
+#      SPRING_DATASOURCE_PASSWORD: password
+#      SPRING_DATASOURCE_DATABASE: library-management-system
+#    networks:
+#      - library-net
+
 networks:
-  db:
-    driver: bridge
+  library-net:
+    external: true
 #volumes:
-#  postgres-data:
+#  db-data:

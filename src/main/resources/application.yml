@@ -1,17 +1,18 @@
 server:
-  port: 3010
+  port: 8080
 
 spring:
   application:
-    name: AbstractProject
+    name: Library-Management-System
   datasource:
-    url: jdbc:postgresql://localhost:5435/abstractproject
-    username: Wassem
+    url: jdbc:postgresql://localhost:5234/library_management_system
+    username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
+    name: library_management_system
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     defer-datasource-initialization: true
     properties:
 #      hibernate:
@@ -19,17 +20,17 @@ spring:
         format_sql: true
     show-sql: true
 
-  config:
-    import: optional:file:.env[.properties]
-  mail:
-    host: ${MAIL_SERVICE_HOST}
-    port: ${MAIL_SERVICE_PORT}
-    username: ${EMAIL_USERNAME}  # Replace with your actual Gmail address
-    password: ${EMAIL_PASSWORD}  # Replace with your actual Gmail password
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true  # This is the correct property name for enabling TLS
-jwtKey: ${SECRET_KEY}
+#  config:
+#    import: optional:file:.env[.properties]
+#  mail:
+#    host: ${MAIL_SERVICE_HOST}
+#    port: ${MAIL_SERVICE_PORT}
+#    username: ${EMAIL_USERNAME}  # Replace with your actual Gmail address
+#    password: ${EMAIL_PASSWORD}  # Replace with your actual Gmail password
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true  # This is the correct property name for enabling TLS
+#jwtKey: ${SECRET_KEY}
