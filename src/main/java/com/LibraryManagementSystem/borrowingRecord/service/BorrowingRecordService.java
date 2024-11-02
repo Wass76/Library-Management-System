@@ -33,8 +33,6 @@ public class BorrowingRecordService {
     @Autowired
     private BorrowingRecordRepository borrowingRecordRepository;
     @Autowired
-    private ObjectsValidator<PaginationRequest> paginationRequestObjectsValidator;
-    @Autowired
     private ObjectsValidator<NewBorrowingRecordRequest> borrowingRecordRequestObjectsValidator;
     @Autowired
     private BookRepository bookRepository;

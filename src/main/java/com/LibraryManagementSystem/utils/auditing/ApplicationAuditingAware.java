@@ -2,6 +2,7 @@ package com.LibraryManagementSystem.utils.auditing;
 
 
 import com.LibraryManagementSystem.user.model.BaseUser;
+import com.LibraryManagementSystem.user.model.Librarian;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,7 +23,7 @@ public class ApplicationAuditingAware implements AuditorAware<UUID> {
          authentication instanceof AnonymousAuthenticationToken){
             return Optional.empty();
         }
-        BaseUser userPrincipal = (BaseUser) authentication.getPrincipal();
+        Librarian userPrincipal = (Librarian) authentication.getPrincipal();
         return Optional.ofNullable(userPrincipal.getId());
     }
 }

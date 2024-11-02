@@ -2,7 +2,6 @@ package com.LibraryManagementSystem.patron.model;
 
 
 import com.LibraryManagementSystem.borrowingRecord.model.BorrowingRecord;
-import com.LibraryManagementSystem.utils.Model.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

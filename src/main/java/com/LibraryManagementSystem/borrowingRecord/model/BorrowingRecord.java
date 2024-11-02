@@ -3,7 +3,6 @@ package com.LibraryManagementSystem.borrowingRecord.model;
 import com.LibraryManagementSystem.book.model.Book;
 import com.LibraryManagementSystem.borrowingRecord.Enum.BorrowingStatus;
 import com.LibraryManagementSystem.patron.model.Patron;
-import com.LibraryManagementSystem.utils.Model.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -27,15 +27,9 @@ public interface ClassMapper {
     BookInfoResponse entityToDto(Book book);
     PatronInfoResponse entityToDto(Patron patron);
 
-//    @Mapping(source = "firstName" , target = "firstName")
+    @Mapping(source = "firstName" , target = "firstName")
     LibrarianAuthenticationResponse entityToDto(Librarian librarian);
 
-//    @Mapping(ignore = true,source = "patronId", target = "patron.id")
-//    @Mapping(ignore = true ,source = "bookId" , target = "book.id")
-//    @Mapping( target = "bookId" ,
-//ignore = true
-////            , expression = "java(borrowingRecord == null ? null : borrowingRecord.getBook.getId)"
-//    )
     BorrowingRecordResponse entityToDto(BorrowingRecord borrowingRecord);
 
 
@@ -45,7 +39,7 @@ public interface ClassMapper {
     //Dto to entity
     Book bookDtoToEntity(BookRequest request);
     Patron patronDtoToEntity(PatronRequest request);
-//    @Mapping(source = "firstName" , target = "firstName")
+    @Mapping(source = "firstName" , target = "firstName")
     Librarian librarianDtoToEntity(LibrarianRegisterRequest request);
 //    @Mapping(source = "borrowDate" , target = "borrowDate")
     BorrowingRecord borrowingRecordDtoToEntity(NewBorrowingRecordRequest request);

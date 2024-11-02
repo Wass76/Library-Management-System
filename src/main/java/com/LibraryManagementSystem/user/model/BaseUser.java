@@ -1,6 +1,5 @@
 package com.LibraryManagementSystem.user.model;
 
-import com.LibraryManagementSystem.utils.Model.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,8 +17,7 @@ import java.util.Collection;
 //@Builder
 @AllArgsConstructor
 @MappedSuperclass
-//@Table(name = "Base_user")
-public class BaseUser extends BaseEntity implements UserDetails  {
+public class BaseUser implements UserDetails  {
 
     @Column(nullable = false)
     private String firstName;

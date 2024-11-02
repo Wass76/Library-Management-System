@@ -23,18 +23,6 @@ public class AbstractRestHandler {
                 LocalDateTime.now());
         return new ResponseEntity<>(apiException,badRequest);
     }
-
-//    @ExceptionHandler(value = {EmailTakenException.class})
-//    public ResponseEntity<Object> handleEmailTakenException(EmailTakenException e){
-//        HttpStatus badRequest = HttpStatus.BAD_REQUEST;
-//        ApiException apiException = new ApiException(
-//                e.getMessage(),
-//                badRequest,
-//                LocalDateTime.now()
-//        );
-//        return new ResponseEntity<>(apiException,badRequest);
-//    }
-
     @ExceptionHandler(value = {ObjectNotValidException.class})
     public ResponseEntity<Object> handleObjectNotValidException(ObjectNotValidException e){
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;

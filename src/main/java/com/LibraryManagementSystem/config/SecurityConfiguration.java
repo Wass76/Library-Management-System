@@ -42,15 +42,11 @@ public class SecurityConfiguration {
     };
     private final AuthenticationProvider authenticationProvider;
 
-//    private final LogoutHandler logoutHandler;
-
     @Bean
     public LogoutHandler logoutHandler() {
-        // You can use a default LogoutHandler or a custom implementation here
         return new LogoutHandler() {
             @Override
             public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-                // Implement your logout logic here (e.g., invalidate session, clear cookies)
             }
         };
     }
@@ -62,19 +58,11 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(WHITE_LIST_URL)
                                 .permitAll()
-
-//                                .requestMatchers("api/v1/mail/**").authenticated()
-//                                .requestMatchers("api/v1/users/**").authenticated()
-//                                .requestMatchers("api/v1/auth/**").authenticated()
                                 .requestMatchers("api/books/**").authenticated()
                                 .requestMatchers("api/patrons/**").authenticated()
                                 .requestMatchers("api/borrow/**").authenticated()
                                 .requestMatchers("api/return/**").authenticated()
                                 .anyRequest().permitAll()
-
-                      //  req.requestMatchers("/api/v1/**").authenticated()
-                      //  req.anyRequest()
-                           //     .permitAll()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider)

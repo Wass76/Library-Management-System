@@ -16,7 +16,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         name = "Wassem Tenbakji" ,
                         email = "wasee.tenbakji@gmail.com"
                 ),
-                description = "open api documentation for Library management system Spring Project",
+                description = "open api documentation for Library management system Spring Project, a task for Maids.cc",
                 title = "Library management system",
                 version = "1.0",
                 license = @License(
